@@ -1,0 +1,66 @@
+\chapter{Differential Calculus}
+
+Suppose we have a path $\vec{f}(t)$ on a manifold $M$.  For a neighborhood $U$ with a coordinate system $(x_1, x_2,..., x_n)$ around a point $p(t_0)$.  Using the chain rule around this point,
+\begin{align}
+  \d{f}{t} & = \pd{f}{x_1}\pd{x_1}{t} + \pd{f}{x_2}\pd{x_2}{t} + ... + \pd{f}{x_n} \pd{x_n}{t} \\
+  & = \left(v^1 \pd{}{x_1} + v^2 \pd{}{x_2} + ... + v^n \pd{}{x_n} \right) f
+\end{align}
+Using all functions through the point, we can construct a vector space that acts as an operator on functions.  The vector space has components $(v^1, v^2, ..., v^n)$ and a basis $(\pd{}{x_1}, \pd{}{x_2},...,\pd{}{x_n})$.  The set of all such objects created by all functions through point $p(t_0)$ is the \textbf{Tangent Space} $TM(p(t_0))$ at point $p(t_0)$.  When we take the set of all the tangent spaces at all the points on the manifold, we get the \textbf{Tangent Bundle} $TM$.  More about bundles in the next section.
+
+Under a change of basis $ \vec{x} \rightarrow \vec{y}(\vec{x} ) $, the bases change \textbf{covariantly} as
+\begin{equation}
+  \mathbf{e}^y_i = \pd{}{y_i} = \sum_j \pd{x_j}{y_i}\pd{}{x_j} = \sum_j \pd{x_j}{y_i} \mathbf{e}^x_j = \sum_j  R^j_i \mathbf{e}^x_j \qquad \qquad R^j_i = \pd{x_j}{y_i}.
+\end{equation}
+The vector components, $v^i$, on the other hand, transform \textbf{contravariantly} as
+\begin{equation}
+  v^i_y = \pd{y_i}{t} = \sum_j \pd{y_i}{x_j} \pd{x_j}{t} = \sum_j \pd{y_i}{x_j} v^j_x
+  = \sum_j \left(R^{-1} \right)^i_j v_x^j \qquad \qquad \left(R^{-1}\right)^i_j = \pd{y_i}{x_j}
+\end{equation}
+Indeed $R$ and $R^{-1}$ are inverses as
+\begin{equation}
+ R^i_j (R^{-1})^j_i = \pd{x_i}{y_j} \pd{y_j}{x_i} = \delta_{i,j}
+\end{equation}
+
+Now the terminology of this can get very confusing; remembering which objects are contravariant or covariant, which transformations are covariant and which are contravariant, etc. The names really don't matter as much as understanding that you need one of each to create a geometrically invariant quantity.  You can determine what goes on top and bottom of a transformation matrix by simply applying the chain rule each time.  Just remember what that $\mathbf{e}_i$ stands for $\pd{}{x_i}$, and you can work everything out from there, without getting hung up on vocabulary.
+
+
+We can think of the contravariant components acting on the covariant bases and spitting out a basis independent object, $\d{f}{t}$.
+\begin{equation}
+  v: \mathbf{e} \rightarrow \d{f}{t}   \qquad \qquad
+  \text{contravariant} :  \text{covariant}  \rightarrow \text{invariant}
+\end{equation}
+Conversely, we could also write
+\begin{equation}
+\mathbf{e} : v \rightarrow \d{f}{t} \qquad \qquad \text{convariant} : \text{contravariant} \rightarrow \text{invariant}
+\end{equation}
+In this way, we have been writing out bases as the covariant objects, but we could also construct a \textbf{covector} space \textbf{dual} to the vector space we just constructed, where instead the bases are contravariant and the components are covariant.
+
+\begin{table}
+  \center
+  \def\arraystretch{1.5}
+  \begin{tabular}{| c | c | c |}
+    \hline
+    & Covariant &  Contravariant  \\
+    \hline
+    Tangent Space & bases $\mathbf{e}_i = \pd{}{x_i}$ & components $v^i$ \\
+    Cotangent Space & components $v_i$ & bases $\omega^i = \text{d}x^i$ \\
+    \hline
+  \end{tabular}
+  \caption{The transformation properties of vectors and covectors.}
+  \label{tab:trans}
+\end{table}
+
+To construct the \textbf{Cotangent bundle} we can proceed analogously to our contruction of the Tangent bundle, but instead at a point $p$, we only look at
+\begin{align}
+  df & = \pd{f}{x_1} \text{d}x^1 + \pd{f}{x_2} \text{d}x^2 + ...
+  + \pd{f}{x_n} \text{d}x^n \\
+  & = v_1 \omega^1 + v_2 \omega^2 + ... + v_n \omega^n
+\end{align}
+For these objects we have the transformation properties
+\begin{equation}
+  v^y_i =\pd{f}{y_i} = \sum_j \pd{f}{x_j} \pd{x_j}{y_i} = \sum_j \pd{x_j}{y_i} v^x_j = \sum_j R^j_i v^x_j
+\end{equation}
+\begin{equation}
+  \omega^i_y = \text{d}y^i = \sum_j \pd{y^i}{x_j} \text{d}x^j =
+  \sum_j \pd{y^i}{x_j} \omega^j_x = \sum_j (R^{-1})^i_j \omega^j_x
+\end{equation}

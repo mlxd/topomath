@@ -1,0 +1,48 @@
+\section{Spin in Magnetic Field}
+The non-relativistic Hamiltonian for a free particle in a magnetic field
+\begin{equation}
+  \mathcal{H}=-\frac{\hbar^2}{2m}\left(\grad-i\frac{q}{c\hbar}\mathbf{A} \right)^2
+\end{equation}
+contains a dependence on a gauge field $\omega$, since the gradient of the any $\omega$ can be added to the the vector potential $\mathbf{A}$ without changing the physical magnetic field
+\begin{equation}
+  \mathbf{B}=\grad \times \left(\mathbf{A}+\grad \omega \right)=\grad \times \mathbf{A}
+\end{equation}
+
+Suppose that $\Psi (\mathbf{r})$ is a solution to the $\mathbf{A}=0$ non-magnetic situation.  Then
+\begin{equation}
+  \Psi^A(\mathbf{r}) = e^{i\frac{q}{c\hbar} \int_{\mathbf{r}_0}^{\mathbf{r}} \mathbf{A}(\mathbf{r}^{\prime}) \cdot d\mathbf{r}^{\prime}   }
+  \Psi(\mathbf{r})
+\end{equation}
+is a solution to the general vector potential $\mathbf{A}\neq 0$ Hamiltonian.
+For ease, let $i\frac{q}{c\hbar} \int_{\mathbf{r}_0}^{\mathbf{r}} \mathbf{A}(\mathbf{r}^{\prime}) \cdot d\mathbf{r}^{\prime} = \phi$.
+\begin{subequations}
+  \begin{equation}
+    \grad^2  -\left(\frac{q}{c\hbar}\right)^2\mathbf{A}^2
+    -i\frac{q}{c\hbar} \mathbf{A} \grad
+    -i \frac{q}{c \hbar} \left((\grad \mathbf{A}) + \mathbf{A}\grad \right)
+   \end{equation}
+   \begin{equation}
+     \grad^2  -\left(\frac{q}{c\hbar}\right)^2\mathbf{A}^2
+     -2 i\frac{q}{c\hbar} \mathbf{A} \grad
+     -i \frac{q}{c \hbar} \left(\grad \mathbf{A}\right)
+   \end{equation}
+
+   Calculating a $\grad$
+   \begin{equation}
+     \left(i \frac{q}{c \hbar} \right) \mathbf{A}
+     e^{\phi} \Psi (\mathbf{r}) +
+     e^{\phi} \grad \Psi (\mathbf{r})
+   \end{equation}
+   Taking just the $\grad^2$ term
+   \begin{equation}
+     e^{\phi} \left(
+    \grad^2 \Psi(\mathbf{r})
+     +
+    2\frac{i q}{c \hbar} \mathbf{A} \grad \Psi(\mathbf{r})
+     -
+     \left(\frac{q}{c\hbar}\right)^2 \mathbf{A}^2  \Psi(\mathbf{r})
+     +
+     \frac{i q}{c \hbar}
+      \Psi(\mathbf{r}) \grad \mathbf{A} \right)
+   \end{equation}
+\end{subequations}
