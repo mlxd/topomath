@@ -8,14 +8,12 @@ Color:  Main.tex
 				#bibtex Colored;
 				${CC} ${FLAGS} -jobname=Colored Main.tex;
 				${CC} ${FLAGS} -jobname=Colored Main.tex;
-        #cp ./Final_thesis.pdf ../TheBookTB/Thesis.pdf
 
 White:  whitetex
 				${CC} ${FLAGS} -jobname=White whitetex
 				#bibtex White;
 				${CC} ${FLAGS} -jobname=White whitetex;
 				${CC} ${FLAGS} -jobname=White whitetex;
-        #cp ./Final_thesis.pdf ../TheBookTB/Thesis.pdf
 
 whitetex: Main.tex
 			sed 's/\\pagecolor{base03}/%/g' $< >$@;
@@ -24,7 +22,7 @@ bibtex:
 				${BCC} biblio
 
 clean:
-				rm -f *gz *blx* *.bcf *.xml *bak *.out *.log *.aux *.lot *.toc *.bbl *.blg *mk *fls *lof
+				rm -f *gz *blx* *.bcf *.xml *bak *.out *.log *.aux *.lot *.toc *.bbl *.blg *mk *fls *lof Text/*aux
 
 
 all: Color White
