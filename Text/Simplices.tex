@@ -32,7 +32,7 @@ For some low dimensional examples,
 \end{tikzpicture}
 \end{center}
 
-Both unoriented and oriented simplices exist.  For our purposes, we will be using oriented simplices.  The orietnation is a positive or negative sign associated with the set.  Permuting the order of the points in the set can change the orientation.
+Both unoriented and oriented simplices exist.  For our purposes, we will be using oriented simplices.  The orientation is a positive or negative sign associated with the set.  Permuting the order of the points in the set can change the orientation.
 \begin{equation}
   p_1 p_2 = - p_2 p_1 \qquad \qquad p_3 p_4 p_5 = - p_4 p_3 p_5 = p_5 p_3 p_4
 \end{equation}
@@ -94,7 +94,7 @@ By adding multiple simplices of the same dimension together, we can form a \text
 \end{tikzpicture}
 \end{center}
 
-Each simplex gives us a collection of points.  From that collection of points, we can decide to just choose a subset of those and look at those instead.  This subset is a \textbf{face} of the simplex.  For example, if we look at the three dimsional simplex above, $p_6 p_7 p_8 p_9$, we could choose the 2-face $p_6 p_7 p_8$.  All the faces make up the boundaries and edges of an object. We should be able to determine things about the boundaries of an object that are independent of the particular way we write in down but just dependent on the global, qualitative features of the object.  This will show up in how an object relates to its faces.
+Each simplex gives us a collection of points.  From that collection of points, we can decide to just choose a subset of those and look at those instead.  This subset is a \textbf{face} of the simplex.  For example, if we look at the three dimensional simplex above, $p_6 p_7 p_8 p_9$, we could choose the 2-face $p_6 p_7 p_8$.  All the faces make up the boundaries and edges of an object. We should be able to determine things about the boundaries of an object that are independent of the particular way we write in down but just dependent on the global, qualitative features of the object.  This will show up in how an object relates to its faces.
 
 To study how an object relates to its faces, we need to introduce a boundary operator  $ \partial: \sigma_n \rightarrow \sigma_{n-1} $
 \begin{tcolorbox}
@@ -103,7 +103,7 @@ To study how an object relates to its faces, we need to introduce a boundary ope
   = \sum_{i=1}^n (-1)^{i} p_1 \dots \hat{p_i} \dots p_n
 \end{equation}
 \end{tcolorbox}
-where $\hat{p_i}$ is ommitted.  For example,
+where $\hat{p_i}$ is omitted.  For example,
 \begin{align}
   \partial(p_0) &= 0 \\
   \partial(p_1 p_2) & = p_2 - p_1 \\
@@ -132,7 +132,7 @@ or in general for any dimension.
   A simplicial complex is a set of of simplices $\kappa$ such that
   \begin{itemize}
     \item For every simplex $\sigma \in \kappa$, every face of the simplex is also in $\kappa$
-    \item The intersection of two simplices is a face of both simplces, $\sigma_1 \cap \sigma_2 \in \sigma_1 , \sigma_2$
+    \item The intersection of two simplices is a face of both simplices, $\sigma_1 \cap \sigma_2 \in \sigma_1 , \sigma_2$
   \end{itemize}
 \end{definition}
 
@@ -325,7 +325,7 @@ To see this, let us go back to our trusty torus and look at the cycle
 \end{equation}
 Go ahead an verify that this is indeed a cycle.  That is a rather straight forward calculation.  And then, waste some period of time trying to find a combination of simplices that will give that particular chain upon derivation.  Then give up and say it's impossible.  Physicist's proof.
 
-You can think of every boundary being able to be continuously deformed to a point through the surface that it borders. But the chain~\ref{eq:not_boundary} can't be deformed away to a point because it wraps around the torus.  Only cutting and glueing the torus would allow you to deform that cycle down into a point.
+You can think of every boundary being able to be continuously deformed to a point through the surface that it borders. But the chain~\ref{eq:not_boundary} can't be deformed away to a point because it wraps around the torus.  Only cutting and gluing the torus would allow you to deform that cycle down into a point.
 
   \begin{tikzpicture}
     \node (p0) at (0,0) [label=left:$p_0$]{};
